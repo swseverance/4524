@@ -6,7 +6,14 @@ Minimal reproduction for [DataDog/browser-sdk#4524](https://github.com/DataDog/b
 
 ## Reproducing
 
-Open https://repro4524.web.app in **Safari** (macOS or iOS) and check the console. You may need to reload the page once or twice but eventually you should see one or more errors along the lines of:
+Open both URLs in **Safari** (macOS or iOS) and check the console. The bug does not affect Chrome or Firefox.
+
+| URL | RUM |
+|-----|-----|
+| https://repro4524.web.app/with-rum.html | active |
+| https://repro4524.web.app/without-rum.html | not loaded |
+
+Both pages produce the same CORS errors, confirming the issue is not caused by DD RUM:
 
 ```
 Fetch API cannot load https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?...&TYPE=xmlhttp&... due to access control checks.
