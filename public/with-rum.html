@@ -4,15 +4,13 @@
     <meta charset="utf-8" />
     <script src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"></script>
     <script>
-      if (new URLSearchParams(location.search).get("initializeRum") === "true") {
-        DD_RUM.init({
-          applicationId: "00000000-0000-0000-0000-000000000000",
-          clientToken: "pub0000000000000000000000000000000",
-          site: "datadoghq.com",
-          trackResources: true,
-          sessionSampleRate: 100,
-        });
-      }
+      DD_RUM.init({
+        applicationId: "00000000-0000-0000-0000-000000000000",
+        clientToken: "pub0000000000000000000000000000000",
+        site: "datadoghq.com",
+        trackResources: true,
+        sessionSampleRate: 100,
+      });
     </script>
     <script src="/__/firebase/12.13.0/firebase-app-compat.js"></script>
     <script src="/__/firebase/12.13.0/firebase-firestore-compat.js"></script>
@@ -32,22 +30,22 @@
       firebase.initializeApp(firebaseConfig);
 
       firebase
-          .firestore()
-          .collection("documents")
-          .doc("my_document")
-          .onSnapshot(
-            (doc) => {
-              document.getElementById("out").textContent = JSON.stringify(
-                doc.data(),
-                null,
-                2,
-              );
-            },
-            (err) => {
-              document.getElementById("out").textContent =
-                "Error: " + err.message;
-            },
-          );
+        .firestore()
+        .collection("documents")
+        .doc("my_document")
+        .onSnapshot(
+          (doc) => {
+            document.getElementById("out").textContent = JSON.stringify(
+              doc.data(),
+              null,
+              2
+            );
+          },
+          (err) => {
+            document.getElementById("out").textContent =
+              "Error: " + err.message;
+          }
+        );
     </script>
   </body>
 </html>

@@ -10,10 +10,10 @@ Open both URLs in **Safari** (macOS or iOS). The bug does not affect Chrome or F
 
 | URL | Expected |
 |-----|----------|
-| https://repro4524.web.app?initializeRum=false | `{ "greeting": "hello world" }` — no console errors |
-| https://repro4524.web.app?initializeRum=true | `{ "greeting": "hello world" }` — but with CORS errors in the console |
+| https://repro4524.web.app/without-rum.html | `{ "greeting": "hello world" }` — no console errors |
+| https://repro4524.web.app/with-rum.html | `{ "greeting": "hello world" }` — but with CORS errors in the console |
 
-With `?initializeRum=true` you should see one or more console errors along the lines of:
+On `with-rum.html` you should see one or more console errors along the lines of:
 
 ```
 Fetch API cannot load https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?...&TYPE=xmlhttp&... due to access control checks.
