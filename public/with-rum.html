@@ -10,6 +10,11 @@
         site: "datadoghq.com",
         trackResources: true,
         sessionSampleRate: 100,
+        beforeSend: (event, context) => {
+          console.log('beforeSend()', event, context);
+
+          return true;
+        },
       });
     </script>
     <script src="/__/firebase/12.13.0/firebase-app-compat.js"></script>
