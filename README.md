@@ -1,8 +1,6 @@
 # Reproduction — DataDog browser-sdk issue #4524
 
-Minimal reproduction for [DataDog/browser-sdk#4524](https://github.com/DataDog/browser-sdk/issues/4524): Firestore WebChannel requests produce CORS errors in Safari when `@datadog/browser-rum` is active.
-
-**Deployed at:** https://repro4524.web.app
+Minimal reproduction for [DataDog/browser-sdk#4524](https://github.com/DataDog/browser-sdk/issues/4524)
 
 ## Reproducing
 
